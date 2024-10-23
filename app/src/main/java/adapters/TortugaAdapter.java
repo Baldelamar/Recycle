@@ -1,5 +1,6 @@
 package adapters;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,16 +53,25 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
         ImageView imgTortuga;
         ImageView imageView;
         Tortuga tortuga;
+        Context context;
 
 
         public TortugaHolder(@NonNull View itemView) {
             super(itemView);
-
+            context = itemView.getContext();
             txtNombre = itemView.findViewById(R.id.txtNombre);
             txtArma = itemView.findViewById(R.id.txtArma);
             txtDescripcion = itemView.findViewById(R.id.txtDescripcion);
             imageView = itemView.findViewById(R.id.imgTortuga);
             itemView.setOnClickListener(this);
+
+                    txtNombre.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent intento = new Intent(v.getContext(), DatosTortuga.class);
+                            intento.putExtra("tortuga", tortuga);
+                            context.startActivity(intento);
+                        }
+                    });
         }
 
         public void setData(Tortuga tortuga) {
@@ -70,11 +80,14 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
             txtArma.setText(tortuga.getArma());
             txtDescripcion.setText(tortuga.getDescripcion());
             imageView.setImageResource(tortuga.getImagen());
+
+
         }
+
 
         @Override
         public void onClick(View view) {
-//            intent = new Intent(this,TortugaActivity.class);
+
         }
     }
 }

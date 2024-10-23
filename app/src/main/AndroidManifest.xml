@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Recycle"
         tools:targetApi="31">
         <activity
+            android:name="adapters.DatosTortuga"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

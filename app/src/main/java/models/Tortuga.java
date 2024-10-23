@@ -2,7 +2,9 @@ package models;
 
 import android.graphics.Color;
 
-public class Tortuga {
+import java.io.Serializable;
+
+public class Tortuga implements Serializable {
 
     private String Nombre;
 
