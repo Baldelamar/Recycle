@@ -37,6 +37,8 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
     public void onBindViewHolder(@NonNull TortugaAdapter.TortugaHolder holder, int position) {
         holder.setData(ListasTortuga.get(position));
         holder.itemView.setBackgroundColor(ListasTortuga.get(position).getColor());
+        holder.imageView.setImageResource(ListasTortuga.get(position).getImagen());
+
     }
 
     @Override
@@ -48,7 +50,7 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
     public class TortugaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txtNombre, txtArma, txtDescripcion;
         ImageView imgTortuga;
-
+        ImageView imageView;
         Tortuga tortuga;
 
 
@@ -58,7 +60,7 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
             txtNombre = itemView.findViewById(R.id.txtNombre);
             txtArma = itemView.findViewById(R.id.txtArma);
             txtDescripcion = itemView.findViewById(R.id.txtDescripcion);
-            imgTortuga = itemView.findViewById(R.id.imgTortuga);
+            imageView = itemView.findViewById(R.id.imgTortuga);
             itemView.setOnClickListener(this);
         }
 
@@ -67,6 +69,7 @@ public class TortugaAdapter extends RecyclerView.Adapter<TortugaAdapter.TortugaH
             txtNombre.setText(tortuga.getNombre());
             txtArma.setText(tortuga.getArma());
             txtDescripcion.setText(tortuga.getDescripcion());
+            imageView.setImageResource(tortuga.getImagen());
         }
 
         @Override

@@ -11,12 +11,14 @@ public class Tortuga {
     private String Arma;
 
     private int color;
+    private int imagen;
 
-    public Tortuga(String nombre, String descripcion, String arma, int color) {
+    public Tortuga(String nombre, String descripcion, String arma, int color, int imagen) {
         Nombre = nombre;
         Descripcion = descripcion;
         Arma = arma;
         this.color = color;
+        this.imagen = imagen;
     }
 
     public int getColor() {
@@ -51,5 +53,8 @@ public class Tortuga {
         Nombre = nombre;
     }
 
+    public int getImagen(){
+        return imagen;
+    }
 
 }

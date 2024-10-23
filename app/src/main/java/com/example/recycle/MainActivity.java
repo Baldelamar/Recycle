@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclertortuga=findViewById(R.id.recyclertortuga);
         List<Tortuga> tortugas = new ArrayList<>();
-        tortugas.add(new Tortuga("Leonardo", "Es azul y tiene disciplina", "Espada", Color.parseColor("#0000FF"))); // Azul
-        tortugas.add(new Tortuga("Donatello", "Es morado y es el más inteligente", "Bastón", Color.parseColor("#800080"))); // Morado
-        tortugas.add(new Tortuga("Raphael", "Es rojo y muy fuerte", "Sai", Color.parseColor("#FF0000"))); // Rojo
-        tortugas.add(new Tortuga("Miguel", "Es naranja y divertido", "Nunchaku", Color.parseColor("#FFA500"))); // Naranja
+        tortugas.add(new Tortuga("Leonardo", "Es azul y tiene disciplina", "Espada", Color.parseColor("#0000FF"), R.drawable.leonardo));
+        tortugas.add(new Tortuga("Donatello", "Es morado y es el más inteligente", "Bastón", Color.parseColor("#800080"), R.drawable.donatello));
+        tortugas.add(new Tortuga("Raphael", "Es rojo y muy fuerte", "Sai", Color.parseColor("#FF0000"), R.drawable.rafael));
+        tortugas.add(new Tortuga("Miguel", "Es naranja y divertido", "Nunchaku", Color.parseColor("#FFA500"), R.drawable.miguel));
 
 
 
